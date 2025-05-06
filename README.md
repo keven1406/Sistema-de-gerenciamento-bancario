@@ -14,7 +14,7 @@ Um sistema de gerenciamento bancário.
 <p>SISTEMA DE GERENCIAMENTO BANCARIO</p>
 <p>=================================</p>
 
-<p></p>O QUE DESEJA FAZER:
+<p>O QUE DESEJA FAZER:</p>
 <p>1 - VER SALDO</p>
 <p>2 - DEPOSITAR</p>
 <p>3 - SACAR</p>
