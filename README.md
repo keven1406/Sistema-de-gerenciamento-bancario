@@ -10,7 +10,9 @@ Um sistema de gerenciamento bancário.
 
 <h2>Menu Principal</h2>
 <p>Segue abaixo a estrutura do Menu principal: </p>
+</br>
 
+<p>=================================</p>
 <p>SISTEMA DE GERENCIAMENTO BANCARIO</p>
 <p>=================================</p>
 
