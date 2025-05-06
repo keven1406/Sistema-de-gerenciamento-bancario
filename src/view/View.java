@@ -1,5 +1,7 @@
 package view;
 import exception.OpcaoInvalidaException;
+import exception.ValorDepositoException;
+import model.Cliente;
 
 
 import java.util.Scanner;
@@ -52,6 +54,34 @@ public class View {
         inserirRodape();
         limparConsole();
         return opcao; //O valor dessa variável irá determinar o loop na main.
+    }
+    public Integer exibirSaldo (double saldo) throws OpcaoInvalidaException {
+        inserirCabecalho();
+        System.out.println("SEU SALDO ATUAL É: R$ " + saldo);
+        return exibirOpcaoMenuPrincipalOuSair();
+    }
+    public Integer exibirDadosDaConta (Cliente cliente) throws OpcaoInvalidaException {
+        inserirCabecalho();
+        System.out.println(cliente.toString());
+        return exibirOpcaoMenuPrincipalOuSair();
+    }
+    public double exibirPerguntaQuantoDepositar (Cliente cliente) throws ValorDepositoException {
+        inserirCabecalho();
+        System.out.println("QUANDO DESEJA DEPOSITAR?");
+        if (sc.hasNextDouble()) {
+            double valorInserido = sc.nextDouble();
+            return valorInserido;
+        } else {
+            throw new ValorDepositoException("Formato de deposito incorreto!");
+        }
+
+
+
+            //double valorDeposito = sc.nextDouble();
+           // cliente.conta.saldo = cliente.conta.saldo + valorDeposito;
+
+
+
     }
 
     public Integer exibirMenuLogarOuCadastrar () throws OpcaoInvalidaException {

@@ -77,6 +77,11 @@ public class Cliente {
         }
     }
 
+    @Override
+    public String toString () {
+        //Falta implementar a classe conta para obter o numero da conta.
+        return "TITULAR: " + nome + "\nCPF: " + CPF +"\nNUMERO DA CONTA: 11122-3";
+    }
 
     //Adicionar model.Cliente.Conta
     public void adicionarConta (Conta conta) {

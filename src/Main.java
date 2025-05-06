@@ -25,6 +25,8 @@ public class Main {
         int opcao = 1;
         View tela = new View();
         Autenticador autenticador = new Autenticador();
+
+        //LOOP DO MENU DE LOGIN E LOGOFF
         while (opcao != 0) {
             try {
                 //1 - ENTRAR 2 - CADASTRAR 0 - SAIR
@@ -35,25 +37,41 @@ public class Main {
                     String senha = autenticador.validarSenha(tela.perguntarAoCliente("QUAL SUA SENHA?"));
                     //Se o cliente for encontrado e a senha for autenticada, será retornado o cliente.
                     Cliente cliente = autenticador.autenticarUsuario(cpf, senha, db);
-                    opcao = tela.exibirMenuPrincipal();
 
-                    //Menu principal
-                   switch (opcao) {
-                       case 1:
-                            //SALDO
-                            
-                       case 2:
-                           //DEPOSITAR
-                       case 3:
-                           //SACAR
-                       case 4:
-                           //TRANSFERIR
-                       case 5:
-                           //EXTRATO
-                       case 6:
-                           //DADOS DA CONTA
-                   }
+                    int opcaoAutenticada = 1;
+                    //LOOP DO MENU PRINCIPAL
+                    while (opcaoAutenticada != 0) {
+                        opcaoAutenticada = tela.exibirMenuPrincipal();
+                        //Menu principal
+                        switch (opcaoAutenticada) {
+                            case 1:
+                                //SALDO
+                                //tela.exibirSaldo(cliente.getConta().exibirSaldo); COMO CONTA AINDA NÃO ESTÁ IMPREMENTADA, FAREI UM VALOR SIMOLICO.
+                                opcaoAutenticada = tela.exibirSaldo(200.00);
+                                break;
+                            case 2:
+                                //DEPOSITAR
+                                //Aqui o objeto cliente irá receber o valor retornado da opcao exibirOpcaoDeposito()
+                                //cliente.conta.depositar(tela.exibirPerguntaQuantoDepositar());
+                                tela.perguntarAoCliente("QUAL VALOR DESEJA DEPOSITAR?");
 
+                                System.out.println("Deposito realizado com sucesso!");
+                                break;
+                            case 3:
+                                //SACAR
+                                break;
+                            case 4:
+                                //TRANSFERIR
+                                break;
+                            case 5:
+                                //EXTRATO
+                                break;
+                            case 6:
+                                //DADOS DA CONTA
+                                opcaoAutenticada = tela.exibirDadosDaConta(cliente);
+                                break;
+                        }
+                    }
                 } else if (opcao == 2) {
                     String respostaNome = autenticador.validarNome(tela.perguntarAoCliente("INSIRA SEU NOME: "));
                     String respostaCpf = autenticador.validarCPF(tela.perguntarAoCliente("INSIRA SEU CPF: "));
