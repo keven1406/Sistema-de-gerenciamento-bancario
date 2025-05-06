@@ -10,7 +10,6 @@ Um sistema de gerenciamento bancário.
 
 <h2>Menu Principal</h2>
 <p>Segue abaixo a estrutura do Menu principal: </p>
-</br>
 
 <p>=================================</p>
 <p>SISTEMA DE GERENCIAMENTO BANCARIO</p>
@@ -25,6 +24,6 @@ Um sistema de gerenciamento bancário.
 <p>6 - DADOS DA CONTA</p>
 <p>0 - SAIR</p>
 =================================
-</br>
+
 
 ![diagrama](diagrama.png)
