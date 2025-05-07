@@ -42,16 +42,6 @@ public class Cliente {
     }
 
 
-
-    //Autenticacao de Usuario. Caso aconteça algum erro será lançado a excecao ErroAutenticacao.
-    public void autenticarUsuario (String CPF, String senha) throws ErroAutenticacaoLogin {
-        String cpfFormatado = CPF.replaceAll("[^\\d]", "");
-        if (this.CPF.equals(cpfFormatado) && this.senha.equals(senha)) {
-            System.out.println("Usuario autenticado com sucesso.");
-        } else {
-            throw new ErroAutenticacaoLogin("Usuário ou senha incorreto.");
-        }
-    }
     //SOBREESCRITA DO METODO EQUALS PARA QUE OS CLIENTES POSSAM SER COMPARADOS POR MEIO DO CPF
     @Override
     public boolean equals (Object obj) {
