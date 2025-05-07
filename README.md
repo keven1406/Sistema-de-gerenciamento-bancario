@@ -25,5 +25,4 @@ Um sistema de gerenciamento bancário.
 <p>0 - SAIR</p>
 =================================
 
-
 ![diagrama](diagrama.png)
