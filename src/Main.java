@@ -5,6 +5,7 @@ import exception.ErroValidacaoNome;
 import exception.ErroValidarCPF;
 import exception.SenhaValidacaoException;
 import model.Cliente;
+import model.Conta;
 import controller.BancoDeDados;
 import view.View;
 import controller.Autenticador;
@@ -78,6 +79,7 @@ public class Main {
                     String respostaSenha = autenticador.validarSenha(tela.perguntarAoCliente("CRIE UMA SENHA: "));
 
                     Cliente novoCliente = new Cliente(respostaNome, respostaCpf, respostaSenha);
+                    Conta conta = new Conta(novoCliente);
                     //Adicionar ao banco de dados o a chave CPF e o cliente.
                     db.addCliente(respostaCpf, novoCliente);
                     System.out.println("Cliente Adicionado com Sucesso!");
